@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>وب‌سایت شخصی علی قاسمی</title>
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" />
+  <link rel="stylesheet" href="initialize.css">
+  <link rel="shortcut icon" href="image/favicon.jpg" type="image/x-icon">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      direction: rtl;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    body.day {
+      background-color: #e6e6e6;
+      color: #222;
+    }
+
+    body.night {
+      background-color: #1e1e2f;
+      color: #eee;
+    }
+
+    body.day h2 {
+      color: #cc4444;
+    }
+
+    body.day h3 {
+      color: #d88ca0;
+    }
+
+    .header {
+      position: relative;
+      width: 100%;
+      height: 450px;
+      overflow: hidden;
+    }
+
+    .header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      filter: brightness(70%);
+    }
+
+    .header h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+      color: #ffd700;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 12px 24px;
+      border-radius: 12px;
+      text-shadow: 0 0 10px black;
+      z-index: 2;
+    }
+
+    .menu-icon {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .menu-icon span {
+      background-color: white;
+      display: block;
+      height: 4px;
+      margin: 5px 0;
+      border-radius: 2px;
+    }
+
+    nav.menu {
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      background-color: rgba(30, 30, 50, 0.95);
+      padding: 10px 15px;
+      border-radius: 8px;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      z-index: 3;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    nav.menu.show {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    nav.menu a {
+      color: #00ffff;
+      text-decoration: none;
+      padding: 8px 0;
+      font-size: 15px;
+      font-weight: bold;
+      border-bottom: 1px solid #444;
+    }
+
+    nav.menu a:hover {
+      color: #ffd700;
+    }
+
+    main {
+      padding: 30px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #00ffff;
+      margin-top: 40px;
+      font-size: 24px;
+    }
+
+    h3 {
+      color: #ff69b4;
+      margin-top: 30px;
+      font-size: 20px;
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    a {
+      color: #ffd700;
+    }
+
+    img.icon {
+      width: 40px;
+      height: 40px;
+      margin: 10px 5px;
+      vertical-align: middle;
+      transition: transform 0.3s;
+    }
+
+    img.icon:hover {
+      transform: scale(1.1);
+    }
+
+    .toggle-theme {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #ffd700;
+      color: black;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .highlighted {
+      background-color: #ffd700 !important;
+      transition: background-color 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-theme" onclick="toggleTheme()">تغییر حالت شب/روز</button>
+
+  <div class="header">
+    <img src="image/IMG_20241104184107988.jpg" alt="عکس علی">
+    <div class="menu-icon" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="menu" id="mainMenu">
+      <a href="#products">معرفی</a>
+      <a href="#footersection">ارتباط با علی</a>
+      <a href="#aboutAli">درباره‌ی علی</a>
+    </nav>
+
+    <h1>به سایت علی خوش آمدید</h1>
+  </div>
+
+  <main>
+    <h2 id="aboutAli">درباره علی</h2>
+    <p>
+      ایران، کرج، فردیس. اصالتاً کرد. زمینه‌های مورد علاقه: طراحی وب، امنیت شبکه، هوش مصنوعی. نام استاد: آقای امید لک. در حال حاضر مشغول به طراحی وب.
+    </p>
+
+    <h2 id="products">معرفی</h2>
+    <p>
+      این وب‌سایت برای نمایش نمونه‌کارها، علاقه‌مندی‌ها و راه‌های ارتباطی با علی طراحی شده است.
+    </p>
+
+    <h3 id="footersection">راه‌های ارتباطی</h3>
+    <p>
+      شماره تماس: 09044389285<br>
+      آدرس: ایران، کرج، فردیس<br>
+      ایمیل: <a href="mailto:qly10361@gmail.com">qly10361@gmail.com</a>
+    </p>
+
+    <div>
+      <a href="https://wa.me/9044389285" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساپ" class="icon">
+      </a>
+
+      <a href="https://t.me/Ali-Gh1394" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="تلگرام" class="icon">
+      </a>
+    </div>
+  </main>
+
+  <script>
+    function autoSetThemeByTime() {
+      const hour = new Date().getHours();
+      const body = document.body;
+      if (hour >= 7 && hour < 19) {
+        body.classList.add("day");
+        body.classList.remove("night");
+      } else {
+        body.classList.add("night");
+        body.classList.remove("day");
+      }
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      body.classList.toggle("night");
+      body.classList.toggle("day");
+    }
+
+    function highlightSection(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.classList.add("highlighted");
+        setTimeout(() => {
+          section.classList.remove("highlighted");
+        }, 2000);
+      }
+    }
+
+    document.querySelectorAll("nav.menu a").forEach(link => {
+      link.addEventListener("click", function () {
+        const targetId = this.getAttribute("href").replace("#", "");
+        highlightSection(targetId);
+        toggleMenu(); // بستن منو بعد از کلیک
+      });
+    });
+
+    function toggleMenu() {
+      const menu = document.getElementById("mainMenu");
+      menu.classList.toggle("show");
+    }
+
+    window.addEventListener("load", autoSetThemeByTime);
+  </script>
+</body>
+</html>
